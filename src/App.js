@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MealCard from "./components/MealCard";
+import { FaGithub } from "react-icons/fa";
 
 export default function App() {
   const [meals, setMeals] = useState([]);
@@ -14,7 +15,7 @@ export default function App() {
   const fetchMeals = async (selectedDay) => {
     try {
       setLoading(true);
-      const res = await axios.get(`https://mycamu-mess-menu-backend.onrender.com/menu/${selectedDay}`);
+      const res = await axios.get(`http://localhost:4000/menu/${selectedDay}`);
       setMeals(res.data);
     } catch (err) {
       console.error(err);
@@ -57,6 +58,28 @@ export default function App() {
           <MealCard key={i} meal={meal} />
         ))}
       </div>
+
+      {/* Footer with GitHub links */}
+      <footer className="mt-16 flex flex-col items-center gap-4 text-purple-300">
+        <a
+          href="https://github.com/Mbajaj0807/mycamu-mess-menu-backend"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors"
+        >
+          <FaGithub size={20} />
+          Backend Repository
+        </a>
+        <a
+          href="https://github.com/Mbajaj0807/mycamu-mess-menu-frontend"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-purple-400 transition-colors"
+        >
+          <FaGithub size={20} />
+          Frontend Repository
+        </a>
+      </footer>
     </div>
   );
 }
