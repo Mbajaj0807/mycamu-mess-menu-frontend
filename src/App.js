@@ -15,7 +15,7 @@ export default function App() {
   const fetchMeals = async (selectedDay) => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:4000/menu/${selectedDay}`);
+      const res = await axios.get(`https://mycamu-mess-menu-backend.onrender.com/menu/${selectedDay}`);
       setMeals(res.data);
     } catch (err) {
       console.error(err);
