@@ -29,6 +29,10 @@ export default function App() {
       <h1 className="text-4xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mb-10">
         Mess Menu 
       </h1>
+       {/* <h3 className="text-1xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mb-10">
+        Response can take upto 50 seconds due to inactivity of hosting services. 
+      </h3> */}
+    
 
       {/* Day Selector */}
       <div className="flex flex-wrap justify-center gap-4 mb-10">
@@ -49,7 +53,9 @@ export default function App() {
 
       {/* Loader */}
       {loading && (
-        <p className="text-center text-purple-300 italic">Loading menu...</p>
+        <p className="text-center text-purple-300 italic">Loading menu... Response can take upto 50 seconds due to inactivity of hosting services.</p>
+        
+        
       )}
 
       {/* Meals */}
