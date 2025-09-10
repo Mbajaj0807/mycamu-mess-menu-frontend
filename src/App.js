@@ -4,8 +4,11 @@ import MealCard from "./components/MealCard";
 import { FaGithub } from "react-icons/fa";
 
 export default function App() {
+  const dayMap = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const today = dayMap[new Date().getDay()];
+  
   const [meals, setMeals] = useState([]);
-  const [day, setDay] = useState("TUE");
+  const [day, setDay] = useState(today);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
