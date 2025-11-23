@@ -18,7 +18,7 @@ export default function App() {
   const fetchMeals = async (selectedDay) => {
     try {
       setLoading(true);
-      const res = await axios.get(`https://mycamu-mess-menu-backend.onrender.com/menu/${selectedDay}`);
+      
       const res = await axios.get(`https://mycamu-mess-menu-backend.vercel.app/api/menu?day=${selectedDay}`);
       setMeals(res.data);
     } catch (err) {
